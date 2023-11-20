@@ -151,12 +151,12 @@ namespace BSUIR_Lab_5_task1
             denominatorPart = (int)Math.Pow(10, intAndFracPart.Length > 1 ? intAndFracPart[1].Length: 1); // Знаменатель в виде целого числа
         }
 
-        public void Noramlize()
+        public Rational Noramlize()
         {
             int nod = this.GetNOD();
             numerator /= nod;
             denominator /= nod;
-
+            return this;
         }
 
         public static implicit operator Rational(int num)
@@ -329,7 +329,7 @@ namespace BSUIR_Lab_5_task1
         }
         public static Rational operator -- (Rational num1)
         {
-            // Увеличивает число на 1%.         
+            // Уменшяет число на 1%.         
             Rational addValue = (num1 / 100) * 1;
 
             return num1 - addValue;
